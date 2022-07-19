@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #0e152c;
+}
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
