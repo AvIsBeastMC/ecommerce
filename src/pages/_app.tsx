@@ -1,10 +1,11 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import Layout from '../components/Layout'
-import AOS from 'aos'
-import { useEffect } from 'react'
 import 'aos/dist/aos.css'
-import { GlobalStateProvider } from '../hooks/useGlobalState'
+
+import AOS from 'aos'
+import type { AppProps } from 'next/app'
+import { GlobalStateProvider } from '../hooks/client/useGlobalState'
+import Layout from '../components/Layout'
+import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

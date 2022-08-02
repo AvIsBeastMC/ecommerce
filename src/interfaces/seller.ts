@@ -6,6 +6,6 @@ export interface SellerInterface {
     email: string,
     password: string,
     joinedOn: string,
-    items: ItemInterface[],
-    orders: OrderInterface[]
+    items: string[],
+    orders: string[]
 }

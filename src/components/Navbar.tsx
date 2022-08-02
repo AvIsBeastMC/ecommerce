@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import React, { useState } from 'react'
-import Link from 'next/link'
+
 import NavLink, { NavLinkProps } from './NavLink'
-import { useGlobalState } from '../hooks/useGlobalState'
+import React, { useState } from 'react'
+
+import Link from 'next/link'
+import { useGlobalState } from '../hooks/client/useGlobalState'
 
 const Navbar: React.FC = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(true)
@@ -34,10 +36,10 @@ const Navbar: React.FC = () => {
             </div>
             {mobileNavOpen ? (
               <div data-aos="fade-up" className="flex flex-col text-gray-400 capitalize lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center">
-                {links.map((link) => {
+                {links.map((link, i) => {
                   return (
                     <>
-                      <NavLink key={link.title + link.link} title={link.title} link={link.link} />
+                      <NavLink key={i} title={link.title} link={link.link} />
                     </>
                   )
                 }

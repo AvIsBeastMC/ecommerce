@@ -1,6 +1,5 @@
-import mongoose from 'mongoose'
-
 import { OrderInterface } from "../interfaces/order"
+import mongoose from 'mongoose'
 
 const orderSchema = new mongoose.Schema<OrderInterface>({
   orderedOn: String,

@@ -6,7 +6,7 @@ const accountSchema = new mongoose.Schema<AccountInterface>({
   name: String,
   email: String,
   password: String,
-  orders: Array<AccountOrderInterface>,
+  orders: Array<string>,
   createdOn: String,
   address: String,
   country: String

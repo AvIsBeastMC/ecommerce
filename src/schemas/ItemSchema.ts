@@ -1,13 +1,15 @@
+import { ImageInfo, ItemInterface } from '../interfaces/item'
+
 import mongoose from 'mongoose'
 
-import { ItemInterface } from '../interfaces/item'
-
 const itemSchema = new mongoose.Schema<ItemInterface>({
+  sellerId: String,
   title: String,
   brand: String,
-  sellerId: String,
+  category: String,
+  description: String,
   stock: Number,
-  orders: Number
+  orders: Array<string>,
 })
 
 export default (mongoose.models.items as mongoose.Model<ItemInterface>) || mongoose.model<ItemInterface>("items", itemSchema)
