@@ -1,9 +1,10 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import React from 'react'
+
 import { GlobalStateInterface } from './useGlobalState';
-import { MongooseAccountInterface } from '../interfaces/account';
-import moment from 'moment';
+import { MongooseAccountInterface } from '../../interfaces/account';
+import React from 'react'
 import handleAxiosError from './handleAxiosError';
+import moment from 'moment';
 
 export default function refresh(state: GlobalStateInterface, setState: React.Dispatch<React.SetStateAction<GlobalStateInterface>>):boolean {
     axios.get("/api/accountHandler", {
