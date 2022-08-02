@@ -40,7 +40,7 @@ export default async function ItemHandler(req: NextApiRequest, res: NextApiRespo
     switch (method) {
         case "update":
             // fields that can be updated, only requested. title, description, brand, category and stock, and of course, seller.
-            if (!headers._id || !headers.title || !headers.description || !headers.brand || !headers.category || !headers.stock || !headers.seller || !headers.image) return insufficientHeaders(req, res);
+            if (!headers._id || !headers.title || !headers.description || !headers.brand || !headers.category || !headers.stock || !headers.seller) return insufficientHeaders(req, res);
 
             ItemSchema.findById(headers._id).exec((error, result) => {
                 if (error) return handleError(req, res, error);
@@ -54,7 +54,7 @@ export default async function ItemHandler(req: NextApiRequest, res: NextApiRespo
                         stock: headers.stock,
                         sellerId: headers.seller,
                         orders: result.orders,
-                        image: headers.image
+                        image: result.image
                     }
                     
                     result.update(payload)
@@ -147,7 +147,7 @@ export default async function ItemHandler(req: NextApiRequest, res: NextApiRespo
             })
             break;
         case "set":
-            if (!headers.seller || !headers.title || !headers.brand || !headers.category || !headers.description) return insufficientHeaders(req, res)
+            if (!headers.seller || !headers.title || !headers.brand || !headers.category || !headers.description || !headers.image) return insufficientHeaders(req, res)
 
             ItemSchema.create({
                 sellerId: headers.seller,
@@ -155,9 +155,9 @@ export default async function ItemHandler(req: NextApiRequest, res: NextApiRespo
                 brand: headers.brand,
                 category: headers.category,
                 description: headers.description,
-                // photo: headers.photo,
                 stock: 0,
                 orders: [],
+                image: headers.image
             }).then((result) => {
                 SellerSchema.updateOne({
                     _id: headers.seller
