@@ -11,6 +11,7 @@ export type ImageInfo = {
 export interface ItemInterface {
     category: string,
     description: string,
+    image: string,
     title: string,
     brand: string,
     sellerId: string,

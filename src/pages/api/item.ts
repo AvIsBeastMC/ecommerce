@@ -19,6 +19,7 @@ declare module 'http' {
         "category": string;
         "stock": number;
         "seller": string;
+        "image": string;
     }
 }
 
@@ -39,7 +40,7 @@ export default async function ItemHandler(req: NextApiRequest, res: NextApiRespo
     switch (method) {
         case "update":
             // fields that can be updated, only requested. title, description, brand, category and stock, and of course, seller.
-            if (!headers._id || !headers.title || !headers.description || !headers.brand || !headers.category || !headers.stock || !headers.seller) return insufficientHeaders(req, res);
+            if (!headers._id || !headers.title || !headers.description || !headers.brand || !headers.category || !headers.stock || !headers.seller || !headers.image) return insufficientHeaders(req, res);
 
             ItemSchema.findById(headers._id).exec((error, result) => {
                 if (error) return handleError(req, res, error);
@@ -52,7 +53,8 @@ export default async function ItemHandler(req: NextApiRequest, res: NextApiRespo
                         category: headers.category,
                         stock: headers.stock,
                         sellerId: headers.seller,
-                        orders: result.orders
+                        orders: result.orders,
+                        image: headers.image
                     }
                     
                     result.update(payload)

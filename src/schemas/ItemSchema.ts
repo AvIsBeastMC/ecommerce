@@ -10,6 +10,7 @@ const itemSchema = new mongoose.Schema<ItemInterface>({
   description: String,
   stock: Number,
   orders: Array<string>,
+  image: String
 })
 
 export default (mongoose.models.items as mongoose.Model<ItemInterface>) || mongoose.model<ItemInterface>("items", itemSchema)
