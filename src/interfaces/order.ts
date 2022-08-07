@@ -1,4 +1,4 @@
-import { AccountOrderInterface } from "./account";
+import { AccountOrderInterface } from "./Account";
 
 export interface OrderInterface extends AccountOrderInterface {
     orderedOn: string,

@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import AccountSchema from '../../schemas/AccountSchema'
 import ItemSchema from '../../schemas/ItemSchema'
-import { MongooseAccountInterface } from '../../interfaces/account'
+import { MongooseAccountInterface } from '../../interfaces/Account'
 import SellerSchema from '../../schemas/SellerSchema'
 import handleError from '../../hooks/server/handleError'
 import insufficientHeaders from '../../hooks/server/insufficientHeaders'

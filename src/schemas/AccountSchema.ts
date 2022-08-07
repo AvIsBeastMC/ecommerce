@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-import { AccountInterface, AccountOrderInterface } from "../interfaces/account"
+import { AccountInterface, AccountOrderInterface } from "../interfaces/Account"
 
 const accountSchema = new mongoose.Schema<AccountInterface>({
   name: String,

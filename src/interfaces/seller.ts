@@ -1,5 +1,5 @@
-import { ItemInterface } from "./item";
-import { OrderInterface } from "./order";
+import { ItemInterface } from "./Item";
+import { OrderInterface } from "./Order";
 
 export interface SellerInterface {
     name: string,
@@ -8,4 +8,8 @@ export interface SellerInterface {
     joinedOn: string,
     items: string[],
     orders: string[]
+}
+
+export interface MongooseSellerInterface extends SellerInterface {
+    _id: string
 }

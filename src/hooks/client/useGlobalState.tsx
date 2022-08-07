@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react'
 
-import { MongooseAccountInterface } from '../../interfaces/account';
+import { MongooseAccountInterface } from '../../interfaces/Account';
 
 export interface GlobalStateInterface {
   account: MongooseAccountInterface,

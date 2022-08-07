@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { SellerInterface } from "../interfaces/seller"
+import { SellerInterface } from "../interfaces/Seller"
 
 const sellerSchema = new mongoose.Schema<SellerInterface>({
   name: String,

@@ -1,4 +1,4 @@
-import { OrderInterface } from "../interfaces/order"
+import { OrderInterface } from "../interfaces/Order"
 import mongoose from 'mongoose'
 
 const orderSchema = new mongoose.Schema<OrderInterface>({

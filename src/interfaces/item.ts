@@ -9,13 +9,13 @@ export type ImageInfo = {
     cancelled: boolean;
 };
 export interface ItemInterface {
-    category: string,
-    description: string,
-    image: string,
     title: string,
     brand: string,
-    sellerId: string,
+    image: string,
+    category: string,
+    description: string,
     stock: number,
+    sellerId: string,
     orders: string[],
 }
 

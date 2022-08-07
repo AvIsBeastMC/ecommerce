@@ -1,4 +1,4 @@
-import { ImageInfo, ItemInterface } from '../interfaces/item'
+import { ImageInfo, ItemInterface } from '../interfaces/Item'
 
 import mongoose from 'mongoose'
 

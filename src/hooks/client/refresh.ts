@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 import { GlobalStateInterface } from './useGlobalState';
-import { MongooseAccountInterface } from '../../interfaces/account';
+import { MongooseAccountInterface } from '../../interfaces/Account';
 import React from 'react'
 import handleAxiosError from './handleAxiosError';
 import moment from 'moment';
